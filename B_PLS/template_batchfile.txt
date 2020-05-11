@@ -1,0 +1,46 @@
+%------------------------------------------------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% General Section Start %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+prefix mean_PROJECT_ID % prefix for session file and datamat file
+brain_region 0.15 % threshold or file name for brain region
+across_run 1 % 1 for merge data across all run, 0 for within each run
+single_subj 0 % 1 for single subject analysis, 0 for normal analysis
+%------------------------------------------------------------------------
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Condition Section Start %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+cond_name COND1 % condition 1 name, e.g. FACE
+ref_scan_onset 0 % reference scan onset for condition 1
+num_ref_scan 1 % number of reference scan for condition 1
+cond_name COND2 %e.g. HOUSE
+ref_scan_onset 0
+num_ref_scan 1
+cond_name COND3 %e.g. FIXATION
+ref_scan_onset 0
+num_ref_scan 1
+%------------------------------------------------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%
+% Run Section Start %
+%%%%%%%%%%%%%%%%%%%%%%%
+data_files FUNCdata_run1
+block_onsets 0 75 120 150
+block_onsets 30 60 90 165  
+block_onsets 15 45 105 135
+
+block_length 15 15 15 15
+block_length 15 15 15 15
+block_length 15 15 15 15
+
+
+data_files FUNCdata_run2 %if there is a second run, otherwise delete
+block_onsets 0 75 120 150
+block_onsets 30 60 90 165  
+block_onsets 15 45 105 135
+
+
+block_length 15 15 15 15
+block_length 15 15 15 15
+block_length 15 15 15 15
+%------------------------------------------------------------------------

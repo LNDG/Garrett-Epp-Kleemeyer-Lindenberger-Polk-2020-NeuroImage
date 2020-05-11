@@ -1,0 +1,129 @@
+
+%------------------------------------------------------------------------
+
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%  Result File Name Start  %
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%  Note: Result file must be listed first, and must follow the file
+%	 name format of xxxx_yyyyresult.mat, where xxxx stands for
+%	 "any result file name prefix" and yyyy stands for the name
+%	 of PLS module (either PET ERP fMRI BfMRI STRUCT or SmallFC).
+%	 File name is case sensitive on Unix or Linux computers.
+
+result_file	SD_BehavPLS_facehouseDIFF_ALLAccMeanrtSDrtmeasures_10000P10000B_BfMRIresult.mat
+
+	%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%  Result File Name End  %
+	%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%------------------------------------------------------------------------
+
+	%%%%%%%%%%%%%%%%%%%%%%%%%
+	%  Group Section Start  %
+	%%%%%%%%%%%%%%%%%%%%%%%%%
+
+group_files	SD_SUB-1_BfMRIsessiondata.mat SD_SUB-2_BfMRIsessiondata.mat SD_SUB-3_BfMRIsessiondata.mat SD_SUB-4_BfMRIsessiondata.mat SD_SUB-5_BfMRIsessiondata.mat SD_SUB-6_BfMRIsessiondata.mat 
+
+% ... following above pattern for all sessiondata.mat for all subjects
+
+	%%%%%%%%%%%%%%%%%%%%%%%
+	%  Group Section End  %
+	%%%%%%%%%%%%%%%%%%%%%%%
+
+%------------------------------------------------------------------------
+
+	%%%%%%%%%%%%%%%%%%%%%%%
+	%  PLS Section Start  %
+	%%%%%%%%%%%%%%%%%%%%%%%
+
+%  Notes:
+%    1. Mean-Centering PLS
+%    2. Non-Rotated Task PLS (please also fill out contrast data below)
+%    3. Regular Behav PLS (please also fill out behavior data & name below)
+%    4. Multiblock PLS (please also fill out behavior data & name below)
+%    5. Non-Rotated Behav PLS (please also fill out contrast data and
+%	behavior data & name below)
+%    6. Non-Rotated Multiblock PLS (please also fill out contrast data and
+%	behavior data & name below)
+
+pls		3		% PLS Option (between 1 to 6, see above notes)
+
+%  Mean-Centering Type:
+%    0. Remove group condition means from conditon means within each group
+%    1. Remove grand condition means from each group condition mean
+%    2. Remove grand mean over all subjects and conditions
+%    3. Remove all main effects by subtracting condition and group means
+
+mean_type	0		% Mean-Centering Type (between 0 to 3, see above)
+
+%  Correlation Mode:
+%    0. Pearson correlation
+%    2. covaraince
+%    4. cosine angle
+%    6. dot product
+
+cormode		0		% Correlation Mode (can be 0,2,4,6, see above)
+
+num_perm	10000		% Number of Permutation
+num_split	0		% Natasha Perm Split Half
+num_boot	10000		% Number of Bootstrap
+boot_type	strat		% Either strat or nonstrat bootstrap type
+clim		95		% Confidence Level for Behavior PLS
+save_data	0		% Set to 1 to save stacked datamat
+
+	%%%%%%%%%%%%%%%%%%%%%
+	%  PLS Section End  %
+	%%%%%%%%%%%%%%%%%%%%%
+
+%------------------------------------------------------------------------
+
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%  Condition Selection Start  %
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%  Notes: If you don't need to deselect conditions, just leave
+%  "selected_cond" and "selected_bcond" to be commented.
+
+%  First put k number of 1 after "selected_cond" keyword, where k is the
+%  number of conditions in sessiondata file. Then, replace with 0 for
+%  those conditions that you would like to deselect for any case except
+%  behavior block of multiblock PLS. e.g. If you have 3 conditions in
+%  sessiondata file, and you would like to deselect the 2nd condition,
+%  then you should enter 1 0 1 after selected_cond.
+%
+%selected_cond	1 0 
+
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%  Condition Selection End  %
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%------------------------------------------------------------------------
+
+	%%%%%%%%%%%%%%%%%%%%%%%%%
+	%  Behavior Data Start  %
+	%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%  Notes: only list selected conditions (selected_cond)
+
+behavior_data	0.75	0.56	0.67	0.4	2.91	2.94	3.14	2.96	3.16	3.07	3.19	3.17	1.94	1.89	2.52	2.44	2.52	2.47	2.48	2.63
+behavior_data	0.25	0.75	0.44	0.4	3	3.04	3.32	3.28	3.29	3.33	3.37	3.34	2.27	2.29	2.82	2.85	2.73	2.9	2.71	2.92
+behavior_data	0.75	0.75	0.67	0.33	2.87	2.98	3.2	3.11	3.18	3.15	3.29	3.22	1.95	2.14	2.66	2.67	2.69	2.73	2.75	2.63
+behavior_data	0.38	0.38	0.53	0.33	2.94	3	3.25	3.21	3.31	3.26	3.4	3.37	2.03	2.08	2.6	2.66	2.78	2.78	2.75	2.81
+behavior_data	0.63	0.69	0.56	0.47	2.9	2.93	3.18	3.05	3.18	3.15	3.23	3.16	2.2	2.34	2.47	2.64	2.62	2.7	2.65	2.54
+behavior_data	0.88	0.88	0.59	0.53	2.78	2.79	3.12	3.04	3.15	3.1	3.18	3.11	1.89	1.98	2.52	2.52	2.68	2.6	2.67	2.69
+
+	%%%%%%%%%%%%%%%%%%%%%%%
+	%  Behavior Data End  %
+	%%%%%%%%%%%%%%%%%%%%%%%
+
+%------------------------------------------------------------------------
+
+	%%%%%%%%%%%%%%%%%%%%%%%%%
+	%  Behavior Name Start  %
+	%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%  Numbers of Behavior Name should match the Behavior Data above
+
+behavior_name	LetterMemory_ACC MemoryUpdating_ACC_all_trials Nback_ACC_correct_trials_reflect_sqrt_reflect Raven_ACC_mean StroopRTmeanCongruentLOG	StroopRTmeanIncongruentLOG	NumberLetterRTmeanSwitchLOG	NumberLetterRTmeanNonswitchLOG	GlobalLocalRTmeanSwitchLOG 	GlobalLocalRTmeanNonswitchLOG	FaceWordRTmeanSwitchLOG	FaceWordRTmeanNonswitchLOG	StroopRTstdCongruentLOG	StroopRTstdIncongruentLOG	NumberLetter_RTstd_all_switchLOG	NumberLetter_RTstd_all_nonswitchLOG	GlobalLocal_RTstd_all_switchLOG	GlobalLocal_RTstd_all_nonswitchLOG	FaceWord_RTstd_all_switchLOG	FaceWord_RTstd_all_nonswitchLOG
+ 
