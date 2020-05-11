@@ -1,4 +1,4 @@
-# Higher-performers-upregulate-brain_signal-variability-in-response-to-more-feature-rich-visual-input-garrett-2020-neuroimage
+# Garrett-Epp-Kleemeyer-Lindenberger-Polk-2020-NeuroImage
 
 
 * This folder contains the scripts used for the different analysis steps reported in:
