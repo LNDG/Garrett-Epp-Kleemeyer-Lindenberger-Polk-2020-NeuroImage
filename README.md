@@ -1,4 +1,4 @@
-# performer-upregulate-variability-in-response-to-visual-input-garrett-2020-neuroimage
+# Higher-performers-upregulate-brain_signal-variability-in-response-to-more-feature-rich-visual-input-garrett-2020-neuroimage
 
 
 * This folder contains the scripts used for the different analysis steps reported in:
