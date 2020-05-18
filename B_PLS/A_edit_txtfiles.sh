@@ -1,6 +1,6 @@
 #!/bin/bash
 
-## This script adjusts and copies the template.txt file for every subject
+## This script adjusts and copies the template_batchfile.txt file for every subject
 
 # Get ProjectPath & SubjectList
 # TODO: open B_PLS/scripts/template_batchfile.txt and adjust number of conditions, block onsets and block length!
