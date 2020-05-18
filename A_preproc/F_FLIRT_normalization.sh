@@ -26,7 +26,7 @@ for SID in $SubjectList; do
 	highres_head="${ProjectPath}/A_preproc/data/${SID}/anat/mprage.nii.gz" #anatomical image
 	example_func="${fMRIDir}/${SID}.feat/reg/example_func.nii" #example func image from FEAT
 	InputImage="${fMRIDir}/${SID}_func_feat_BPfilt_denoised.nii.gz" #input image
-	OutputImage="${fMRIDir}/${SID}_func_feat_BPfilt_denoised_MNI2mm_flirt.nii.gz" #output image	
+	OutputImage="${fMRIDir}/${SID}_func_feat_BPfilt_denoised_MNI3mm_flirt.nii.gz" #output image	
 	standard_2mm="${ProjectPath}/G_standards_masks/standard/MNI152_T1_2mm_brain.nii.gz" #standard image
 	standard_3mm="${ProjectPath}/G_standards_masks/standard/MNI152_T1_3mm_brain.nii.gz" #standard image
 	
