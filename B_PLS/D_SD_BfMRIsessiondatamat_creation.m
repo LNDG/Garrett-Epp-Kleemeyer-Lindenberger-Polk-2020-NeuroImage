@@ -1,10 +1,10 @@
 function D_SD_BfMRIsessiondatamat_creation
 % This script performs the 2nd pre-step for PLS: Fill matrix with
-% power and SD values for various condtions, runs and blocks.
+% SD values for various condtions, runs and blocks.
 % Input: mean_BfMRIsessiondata.mat
 % Output: SD_BfMRIsessiondata.mat
 % The SD_BfMRIsessiondata.mat are input for the PLS analysis and store the
-% voxel's power values, whole brain coverage, and the common
+% voxel's SD values, whole brain coverage, and the common
 % coordinate space between all subjects
 
 % to do: set condition names!
