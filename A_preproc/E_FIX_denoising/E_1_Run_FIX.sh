@@ -39,7 +39,7 @@ for SID in $SubjectList; do
 	cd $SCRIPTDIR/E_FIX/rejcomps 
 	echo  "${SID}: creating hand_labels_noise.txt"
 	rm ${FEATDir}/hand_labels_noise.txt #remove file if it already exists
-	cp BIK${subj}_prerun${run}_rejcomps.txt ${FEATDir}/hand_labels_noise.txt #copy rejcomps file to FEAT dir and rename it
+	cp ${subj}_rejcomps.txt ${FEATDir}/hand_labels_noise.txt #copy rejcomps file to FEAT dir and rename it
 		
 	## create list for training set
 	TrainingSet=""
@@ -56,3 +56,15 @@ for SID in $SubjectList; do
 	FEATDir="${fMRIDir}/${SID}.feat"
 	/usr/local/fix/fix  -c ${FEATDir} $SCRIPTDIR/E_FIX/TrainingData.RData 60
 done
+
+#denoise func_images
+for subj in $SUBJECTS; do
+	FEATDir="${fMRIDir}/${SID}.feat"
+	cd  ${FEATDir}
+	cat fix4melview_TrainingData_thr60.txt | tail -1  > rejcomps.txt
+	rejcomps=$(cat rejcomps.txt)
+	echo "denoising rejected components ${rejcomps} for ${subj}"
+
+	fsl_regfilt -i ${subj}_func_feat_BPfilt.nii.gz -o ${subj}_func_feat_BPfilt_denoised.nii.gz -d ${FEATDir}/${subj}_func_feat_BPfilt.ica/melodic_mix -f "${rejcomps}"
+	echo "done" 
+	
