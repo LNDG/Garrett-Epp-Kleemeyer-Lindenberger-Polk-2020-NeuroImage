@@ -13,7 +13,7 @@ function C_GMcommonCoords
 
 DATAPATH = [ProjectPath, 'A_preproc/data/']; %preprocessed niftis in standard space
 
-SAVEPATH = [ProjectPath, 'G_standards_masks/GM_mask']; %standard gray matter mask
+SAVEPATH = [ProjectPath, 'G_standards_masks/GM_mask/']; %standard gray matter mask
 mkdir(SAVEPATH);
 
 %% Load MNI template of GM mask
