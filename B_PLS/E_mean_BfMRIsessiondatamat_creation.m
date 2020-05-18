@@ -1,11 +1,5 @@
 function E_mean_BfMRIsessiondatamat_creation
-% This script performs the 2nd pre-step for PLS: Fill matrix with
-% power and SD values for various condtions, runs and blocks.
-% Input: mean_BfMRIsessiondata.mat
-% Output: SD_BfMRIsessiondata.mat
-% The SD_BfMRIsessiondata.mat are input for the PLS analysis and store the
-% voxel's power values, whole brain coverage, and the common
-% coordinate space between all subjects
+% This script adds a fourth condition to the mean_sessiondata.mats: house - face 
 
 % to do: set condition names!
 
@@ -30,10 +24,6 @@ addpath(genpath([ProjectPath, 'E_toolboxes/preprocessing_tools']));
  
 load([ProjectPath, 'G_standards_masks/GM_mask/GMcommoncoords.mat']);
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Calculate SD values %%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 for i = 1:length(SubjectList)
 
