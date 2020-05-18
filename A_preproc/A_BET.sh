@@ -16,7 +16,7 @@ for SID in $SubjectList; do
 	mkdir -p ${PreprocAnatDir} #make preproc anat. directory
 
 	# Perform BET with indicated parameter(s)
-	bet ${RawAnatDir}mprage.nii ${PreprocAnatDir}/mprage_brain.nii.gz -f 0.3
+	bet ${RawAnatDir}mprage.nii ${PreprocAnatDir}mprage_brain.nii.gz -f 0.3
 	# parameters -f and -g can be adjusted, see: https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/BET/UserGuide
 	
 	echo "BET subject ${SID} done"
