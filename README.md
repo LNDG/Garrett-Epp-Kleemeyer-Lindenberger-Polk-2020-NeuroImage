@@ -77,12 +77,12 @@
 
  In this folder, all components for performing FIX denoising are stored
 
-    6. **E_0_create_rejcomp_txtfiles**
+6. **E_0_create_rejcomp_txtfiles**
     1/3 of the dataset's ICA components are screened **manually** and a list of noise components is made for later removal. Noise components must be stored in a subject specific text file. Use this template to fill in the artefactual components and execute the template. This creates txt-files (e.g. SUB01_rejcomps.txt) in E_FIX/rejcomps folder. 
  
     **NOTE**: As ICA calculation is probabilistic, the components may change slightly after each run of FSL MELODIC. Therefore, we provide our original ICA results (components' html sites) under /FaceHouseData/A_preproc/D_ICA_results/ together with our denoising decicions: /FaceHouseData/A_preproc/E_FIX_denoising/rejcomps/. 
 
-    7. **E_1_Run_FIX**
+7. **E_1_Run_FIX**
     This script creates an ouput Training dataset (TrainingData.RData object) from the hand-labeled training data set (E_FIX/rejcomps txt files). It then applies artefact cleanup with the help of this training set for the rest of the study subjects.
     Input:  
     1. Feat dirs for feature extraction (/FaceHouseData/A_preproc/data/<ID>/fMRI/$<ID>.feat)
