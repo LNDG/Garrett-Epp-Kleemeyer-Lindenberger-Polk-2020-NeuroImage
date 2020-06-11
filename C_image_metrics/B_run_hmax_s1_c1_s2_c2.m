@@ -128,25 +128,22 @@ end
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %load universal patch set
-load([TOOLBOXDIR, 'universal_patch_set.mat'], 'patchSizes', 'patches');
+load([TOOLBOXDIR, '/universal_patch_set.mat'], 'patchSizes', 'patches');
 
 nPatchSizes = size(patchSizes,2);
 
-for k = 1:length(Faces)
-        
-    [c2_faces{k},~,bestBands_faces{k},bestLocations_faces{k},s2_faces{k},~] = extractC2forCell...
-        (filters,filterSizes,c1Space,c1Scale,c1OL,patches,Faces{k},nPatchSizes,patchSizes(1:3,:));
-end
+
+[c2_faces, ~, bestBands_faces, bestLocations_faces, s2_faces,~] = extractC2forCell...
+        (filters,filterSizes,c1Space,c1Scale,c1OL,patches,Faces,nPatchSizes,patchSizes(1:3,:));
+
 
 save([SAVEDIR, 'c2_s2_faces.mat'], 'c2_faces', 'bestBands_faces', 'bestLocations_faces','s2_faces', '-v7.3');
-
-for k = 1:length(Houses)
         
-    [c2_houses{k},~,bestBands_houses{k},bestLocations_houses{k},s2_houses{k},~] = extractC2forCell...
-        (filters,filterSizes,c1Space,c1Scale,c1OL,patches,Houses{k},nPatchSizes,patchSizes(1:3,:));
-end
+   [c2_houses,~,bestBands_houses, bestLocations_houses, s2_houses,~] = extractC2forCell...
+        (filters,filterSizes,c1Space,c1Scale,c1OL,patches,Houses,nPatchSizes,patchSizes(1:3,:));
 
-save([SAVEDIR, 'c2_s2_houses.mat'], 'c2_houses', 'bestBands_houses', 'bestLocations_houses','s2_faces', '-v7.3');
+
+save([SAVEDIR, 'c2_s2_houses.mat'], 'c2_houses', 'bestBands_houses', 'bestLocations_houses','s2_houses', '-v7.3');
 
 
 end
