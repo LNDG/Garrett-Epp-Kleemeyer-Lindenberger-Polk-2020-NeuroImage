@@ -80,11 +80,13 @@
  Note: You should run FIX on your own trainingset, i.e. creating a trainingset of your own data (approx. 1/3 of your data). As an example, we provide the component set of one subject (E_FIX_denoising/example_ica/102_ica.ica/*) as an html page together with our decisions about noise components: E_FIX_denoising/example_ica/102_rejcomps.txt
 
 6. **E_0_create_rejcomp_txtfiles**
+    
     1/3 of the dataset's ICA components are screened **manually** and a list of noise components is made for later removal. Noise components must be stored in a subject specific text file. Use this template to fill in the artefactual components and execute the template. This creates txt-files (e.g. SUB01_rejcomps.txt) in E_FIX/rejcomps folder. 
  
     **NOTE**: As ICA calculation is probabilistic, the components may change slightly after each run of FSL MELODIC. Therefore, we provide our original ICA results (components' html sites) under /FaceHouseData/A_preproc/D_ICA_results/ together with our denoising decicions: /FaceHouseData/A_preproc/E_FIX_denoising/rejcomps/. 
 
 7. **E_1_Run_FIX**
+    
     This script creates an ouput Training dataset (TrainingData.RData object) from the hand-labeled training data set (E_FIX/rejcomps txt files). It then applies artefact cleanup with the help of this training set for the rest of the study subjects.
     Input:  
     1. Feat dirs for feature extraction (/FaceHouseData/A_preproc/data/<ID>/fMRI/$<ID>.feat)
@@ -114,6 +116,7 @@
  Ouput: /B_PLS/batchfiles/<ID>_batchfile.txt
 
 2. **B_Sessiondatamat_creation**
+ 
  This script creates session data mat-files for PLS from txt template (/B_PLS/batchfiles/<ID>_batchfile.txt). It creates the structure of the sessiondata.mat files, needed for PLS. This file structure can then be altered to our needs in later steps and filled with different values of interest.
 
  Template path: /B_PLS/batchfiles/
@@ -129,17 +132,20 @@
  Output: G_standards_masks/GM_mask/GMcommoncoords.mat
 
 4. **D_SD_BfMRIsessiondatamat_creation.m**
+
 This script performs the 2nd pre-step for PLS: Fill matrix with SD values for various condtions, runs and blocks. It also adds a fourth condition: SD house - SD face
 Input: /B_PLS/B_meanPLS/mean_<PROJECT>_<ID>_BfMRIsessiondata.mat 
 Output: /B_PLS/A_SD_PLS/SD_<PROJECT>_<ID>_BfMRIsessiondata.mat 
 
 5. **E_mean_BfMRIsessiondatamat_creation.m**
+
 This script adds a fourth condition to the mean_sessiondata.mats: house - face 
 Input: /B_PLS/B_meanPLS/mean_<PROJECT>_<ID>_BfMRIsessiondata.mat 
 Ouput: /B_PLS/B_meanPLS/mean_<PROJECT>_<ID>_BfMRIsessiondata.mat (with four conditions instead of three)
 
 ## Image metrics
 6. **A_FaceHouse_image_properties.m**
+
 This script performs calculation of:
 (1) contrast (or “variance”): intensity contrast between neighbouring pixels over an entire 2D image 
 (2) correlation: correlation between neighbouring pixel intensities over a 2D image
@@ -154,6 +160,7 @@ Input: /F_images_experiment/*
 Ouput: /D_figures/*
 
 7. **B_run_hmax_s1_c1_s2_c2.m**
+
 This script runs the hmax model on the input images. 
 Input: /F_images_experiment/*
 Output: /C_image_metrix/hmax_output/*
