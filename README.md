@@ -134,4 +134,18 @@ Output: /B_PLS/A_SD_PLS/SD_<PROJECT>_<ID>_BfMRIsessiondata.mat
 5. **E_mean_BfMRIsessiondatamat_creation.m**
 This script adds a fourth condition to the mean_sessiondata.mats: house - face 
 Input: /B_PLS/B_meanPLS/mean_<PROJECT>_<ID>_BfMRIsessiondata.mat 
-Input: /B_PLS/B_meanPLS/mean_<PROJECT>_<ID>_BfMRIsessiondata.mat (with four conditions instead of three)
+Ouput: /B_PLS/B_meanPLS/mean_<PROJECT>_<ID>_BfMRIsessiondata.mat (with four conditions instead of three)
+
+## Image metrics
+This script performs calculation of:
+(1) contrast (or “variance”): intensity contrast between neighbouring pixels over an entire 2D image 
+(2) correlation: correlation between neighbouring pixel intensities over a 2D image
+(3) energy (or “inertia”): the sum of squared elements in the grey-level co-occurrence matrix (GLCM)
+(4) homogeneity: measure of the closeness of the distribution of elements in the GLCM to the GLCM diagonal
+(5) local entropy (using entropyfilt): This function computes entropy on greyscale intensities from 9 * 9 pixel neighbourhoods, within-image; we then averaged all local neighbourhoods within-image to estimate a single average image entropy per face and house image. 
+(6) local standard deviation (stdfilt): using using the same grey scale intensity neighborhood approach as above (9 * *9 pixel), this function computes the standard deviation (SD) for each neighborhood
+
+for each of the input images. 
+
+Input: /F_images_experiment/*
+Ouput: /D_figures/*
