@@ -1,4 +1,4 @@
-function [ProjectPath,SubjectList]=preproc_mat_config()
+function [ProjectPath,SubjectList]=metric_mat_config()
 
 % Location where user has placed the NKI_enhanced_rest folder
 ProjectPath='/Volumes/XXX/FaceHouseData/';
