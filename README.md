@@ -77,6 +77,8 @@
 
  In this folder, all components for performing FIX denoising are stored
 
+ Note: You should run FIX on your own trainingset, i.e. creating a trainingset of your own data (approx. 1/3 of your data). As an example, we provide the component set of one subject (E_FIX_denoising/example_ica/102_ica.ica/*) as an html page together with our decisions about noise components: E_FIX_denoising/example_ica/102_rejcomps.txt
+
 6. **E_0_create_rejcomp_txtfiles**
     1/3 of the dataset's ICA components are screened **manually** and a list of noise components is made for later removal. Noise components must be stored in a subject specific text file. Use this template to fill in the artefactual components and execute the template. This creates txt-files (e.g. SUB01_rejcomps.txt) in E_FIX/rejcomps folder. 
  
