@@ -137,6 +137,7 @@ Input: /B_PLS/B_meanPLS/mean_<PROJECT>_<ID>_BfMRIsessiondata.mat
 Ouput: /B_PLS/B_meanPLS/mean_<PROJECT>_<ID>_BfMRIsessiondata.mat (with four conditions instead of three)
 
 ## Image metrics
+6. **A_FaceHouse_image_properties.m**
 This script performs calculation of:
 (1) contrast (or “variance”): intensity contrast between neighbouring pixels over an entire 2D image 
 (2) correlation: correlation between neighbouring pixel intensities over a 2D image
@@ -149,3 +150,9 @@ for each of the input images.
 
 Input: /F_images_experiment/*
 Ouput: /D_figures/*
+
+7. **B_run_hmax_s1_c1_s2_c2.m**
+This script runs the hmax model on the input images. 
+Input: /F_images_experiment/*
+Output: /C_image_metrix/hmax_output/*
+     s1, s2, c1, c2
