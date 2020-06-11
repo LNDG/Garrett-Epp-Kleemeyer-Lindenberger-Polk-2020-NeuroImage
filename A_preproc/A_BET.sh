@@ -4,7 +4,7 @@
 ##################################################################################################################################
 
 # TODO: Before running scripts, please change the preproc_bash_config file and the preproc_mat_config file with the correct directories and subject list.
-# TODO: Run script from the folder */A_preproc/scripts to properly access the preproc_bash_config file
+# TODO: Run script from the folder */A_preproc to properly access the preproc_bash_config file
 
 source preproc_bash_config.sh
 
